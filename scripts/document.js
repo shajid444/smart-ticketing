@@ -58,17 +58,42 @@ for (let index = 0; index < seats.length; index++) {
 
 
         //   end seat name
-          
-          
-
 
 
         }
 
-
-
-
-
-    });
+   });
 
 }
+
+
+const btn = document.getElementById('apply-btn');
+// console.log(btn);
+btn.addEventListener('click', function(){
+    // console.log('clicked');
+
+    const coupon = document.getElementById('input-field').value;
+    // console.log(coupon);
+    const couponCode = coupon.split(" ").join("").toUpperCase();
+    // console.log(couponCode);
+    
+
+    if (couponCode=== 'NEW15') {
+        console.log('valid');
+        const discount =toTotalPrice - (toTotalPrice * 0.15);
+        setSeat('after-discount');
+        setElementValueById('after-discount', discount);
+
+        
+    }
+
+    else if(couponCode=== 'COUPLE20'){
+        console.log('vald');
+        const discount =toTotalPrice - (toTotalPrice * 0.2);
+        setSeat('after-discount');
+        setElementValueById('after-discount', discount);
+    }
+    else{
+        alert("Invalid Coupon Code");
+    }
+});
