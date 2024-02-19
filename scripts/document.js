@@ -83,6 +83,8 @@ btn.addEventListener('click', function(){
         const discount =toTotalPrice - (toTotalPrice * 0.15);
         setSeat('after-discount');
         setElementValueById('after-discount', discount);
+        document.getElementById('input-field').value ="";
+        hideElementById('dis-part');
 
         
     }
@@ -92,6 +94,8 @@ btn.addEventListener('click', function(){
         const discount =toTotalPrice - (toTotalPrice * 0.2);
         setSeat('after-discount');
         setElementValueById('after-discount', discount);
+        document.getElementById('input-field').value ="";
+        hideElementById('dis-part');
     }
     else{
         alert("Invalid Coupon Code");
